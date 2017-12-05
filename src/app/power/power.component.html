@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <form action="" (submit)="onSubmit()">
+    <label for="powerLevel">Initial Power Level</label>
+    <select [(ngModel)]="powerLevel" name="powerLevel" id="" class="form-control">
+        <option *ngFor='let level of levels' value="{{ level }}">{{ level }}</option>
+    </select>
+    <input type="submit" value="Calculate Powers" class="btn-success">
+  </form>
+  <div class="row">
+    <div class="col-md-4">
+      <app-human [level]='multiplier'></app-human>
+    </div>
+    <div class="col-md-4">
+      <app-saiyan [level]='multiplier * 5'></app-saiyan>
+    </div>
+    <div class="col-md-4">
+      <app-super-saiyan [level]='multiplier * 10'></app-super-saiyan>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">  
+      <app-super-saiyan-two [level]='multiplier * 100'></app-super-saiyan-two>
+    </div>
+    <div class="col-md-4">
+      <app-super-saiyan-three [level]='multiplier * 500'></app-super-saiyan-three>
+    </div>
+    <div class="col-md-4">
+      <app-super-saiyan-four [level]='multiplier * 1000'></app-super-saiyan-four>
+    </div>
+  </div>
+</div>
